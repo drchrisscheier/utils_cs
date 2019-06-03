@@ -22,6 +22,26 @@ def replace_umlauts(text, is_spacy=False):
     res = res.replace('ß', 'ss')
     return res
 
+def get_wordcloud_text(text, fname="wordcloud.png"):
+    wordcloud = WordCloud(width=800,height=600,  background_color='white', normalize_plurals=False)
+    wordcloud.generate(text)
+    wordcloud_img=wordcloud.to_image()
+    wordcloud_img.save(fname)
+    plt.imshow(wordcloud_img)
+    
+def get_wordcloud_freq(words, counts, fname="wordcloud.png"):
+    d = {}
+    for a, x in zip(words, counts ):
+            d[a] = x
+
+    wordcloud = WordCloud(width=800,height=600,  background_color='white')
+    wordcloud.generate_from_frequencies(frequencies=d)
+    wordcloud_img=wordcloud.to_image()
+    
+    wordcloud_img.save(fname)  
+    plt.imshow(wordcloud_img)
+
+
 def map2scale(value, leftMin, leftMax, rightMin, rightMax):
     leftSpan = leftMax - leftMin
     rightSpan = rightMax - rightMin
