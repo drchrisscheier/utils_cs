@@ -2,6 +2,7 @@
 
 import pandas as pd
 from collections import namedtuple
+import matplotlib.pyplot as plt
 
 def replace_umlauts(text, is_spacy=False):
     """
