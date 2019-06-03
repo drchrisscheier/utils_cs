@@ -3,13 +3,6 @@
 import pandas as pd
 
 
-def dict2df(dict_, key_col='token', val_col='value'):
-    df = pd.DataFrame()
-    df[key_col] = list(dict_.keys())
-    df[val_col] = list(dict_.values())
-    df.sort_values(by=val_col, axis=0, ascending=False, inplace=True)
-    return df
-
 def map2scale(value, leftMin, leftMax, rightMin, rightMax):
     # Figure out how 'wide' each range is
     leftSpan = leftMax - leftMin
@@ -21,6 +14,12 @@ def map2scale(value, leftMin, leftMax, rightMin, rightMax):
     # Convert the 0-1 range into a value in the right range.
     return int(rightMin + (valueScaled * rightSpan))
 
+def dict2df(dict_, key_col='token', val_col='value'):
+    df = pd.DataFrame()
+    df[key_col] = list(dict_.keys())
+    df[val_col] = list(dict_.values())
+    df.sort_values(by=val_col, axis=0, ascending=False, inplace=True)
+    return df
 
 def gen_edge_coordinates(graph, layout):
         xs = []
