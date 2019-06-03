@@ -3,6 +3,7 @@
 import pandas as pd
 from collections import namedtuple
 import matplotlib.pyplot as plt
+from  wordcloud import WordCloud
 
 def replace_umlauts(text, is_spacy=False):
     """
