@@ -10,6 +10,7 @@ def dict2df(dict_, key_col='token', val_col='value'):
     df.sort_values(by=val_col, axis=0, ascending=False, inplace=True)
     return df
 
+
 # for graph construction
 def map2scale(value, leftMin, leftMax, rightMin, rightMax):
     # Figure out how 'wide' each range is
@@ -21,6 +22,7 @@ def map2scale(value, leftMin, leftMax, rightMin, rightMax):
 
     # Convert the 0-1 range into a value in the right range.
     return int(rightMin + (valueScaled * rightSpan))
+
 
 def gen_edge_coordinates(graph, layout):
         xs = []
@@ -46,6 +48,7 @@ def gen_edge_coordinates(graph, layout):
             
         return val(xs=xs, ys=ys), named_edges(from_n=from_nodes, to_n = to_nodes)
 
+    
 def gen_node_coordinates(layout):
         names, coords = zip(*layout.items())
         xs, ys = zip(*coords)
