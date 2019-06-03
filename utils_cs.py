@@ -10,8 +10,6 @@ def dict2df(dict_, key_col='token', val_col='value'):
     df.sort_values(by=val_col, axis=0, ascending=False, inplace=True)
     return df
 
-
-# for graph construction
 def map2scale(value, leftMin, leftMax, rightMin, rightMax):
     # Figure out how 'wide' each range is
     leftSpan = leftMax - leftMin
