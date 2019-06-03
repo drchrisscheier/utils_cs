@@ -3,6 +3,25 @@
 import pandas as pd
 from collections import namedtuple
 
+def replace_umlauts(text, is_spacy=False):
+    """
+    Replaces german umlauts and sharp s in given text.
+    :param text: text as str
+    :return: manipulated text as str
+    """
+    if is_spacy:
+        res = text.text
+    else:
+        res = text 
+    res = res.replace('ä', 'ae')
+    res = res.replace('ö', 'oe')
+    res = res.replace('ü', 'ue')
+    res = res.replace('Ä', 'Ae')
+    res = res.replace('Ö', 'Oe')
+    res = res.replace('Ü', 'Ue')
+    res = res.replace('ß', 'ss')
+    return res
+
 def map2scale(value, leftMin, leftMax, rightMin, rightMax):
     leftSpan = leftMax - leftMin
     rightSpan = rightMax - rightMin
