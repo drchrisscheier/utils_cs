@@ -46,4 +46,4 @@ def gen_node_coordinates(layout):
     xs, ys = zip(*coords)
     val = namedtuple("nodes", "names xs ys")
     return val(names=names, xs=xs, ys=ys)
-© 2019 GitHub, Inc.
+
