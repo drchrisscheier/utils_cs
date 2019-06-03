@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import pandas as pd
 
 def dict2df(dict_, key_col='token', val_col='value'):
