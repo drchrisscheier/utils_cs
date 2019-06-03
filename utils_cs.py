@@ -8,7 +8,7 @@ def dict2df(dict_, key_col='token', val_col='value'):
     return df
 
 # for graph construction
-def translate(value, leftMin, leftMax, rightMin, rightMax):
+def map2scale(value, leftMin, leftMax, rightMin, rightMax):
     # Figure out how 'wide' each range is
     leftSpan = leftMax - leftMin
     rightSpan = rightMax - rightMin
