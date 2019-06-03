@@ -2,6 +2,7 @@
 
 import pandas as pd
 
+
 def dict2df(dict_, key_col='token', val_col='value'):
     df = pd.DataFrame()
     df[key_col] = list(dict_.keys())
