@@ -59,6 +59,11 @@ def dict2df(dict_, key_col='token', val_col='value'):
     df.sort_values(by=val_col, axis=0, ascending=False, inplace=True)
     return df
 
+def pandas_show_all():
+    pd.set_option('display.max_colwidth', -1)
+    pd.set_option('display.max_columns', None)
+    pd.set_option('display.max_rows', None)
+
 def gen_edge_coordinates(graph, layout):
     xs = []
     ys = []
